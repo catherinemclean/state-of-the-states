@@ -826,14 +826,17 @@ class ChoiceForm(Form):
     gender =SelectField(u'Your gender', choices=[("blank", "Make a choice"), 
         ('Female','Female'),
         ('Male','Male'),
-        ('Transgender','Transgender'),
-        ('Non-binary','Non-binary')
+        ('Non-binary','Non-binary'),
+	('Other','Other')
         ])
     race = SelectField(u'Your race', choices=[("blank", "Make a choice"),
     ('White','White'),
     ('Black','Black'),
     ('Hispanic','Hispanic'),
-    ('Asian/NHPI','Asian/NHPI')
+    ('Asian/NHPI','Asian/NHPI'),
+    ('Native American','Native American'),
+    ('Mixed race','Mixed race'),
+    ('Other','Other')
     ])
     
     
