@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>State of the States</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('match')}}">Match Me!</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('charities')}}">Charities</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">State of the States</h3>
+        </div>
+ 
+        <div class="jumbotron">
+            <h1>State of the States</h1>
+            <img src="{{url_for('static', filename='map.gif')}}" alt="Mountain View">
+            <p>Want to see what growing up in a different part of America is like? Click "Match me!" to continue!</p>
+            <p class="lead"></p>
+            <p><a class="btn btn-lg btn-success" href="match" role="button">Match me! </a>
+            </p>
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; State of the States 2017</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>

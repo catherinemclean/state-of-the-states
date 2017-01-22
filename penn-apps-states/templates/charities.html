@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+ 
+<head>
+    <title> State of the States </title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('match')}}">Match Me!</a>
+                    </li>
+                    <li role="presentation" class="active"> <a href="{{url_for('charities')}}">Charities</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">State of the States</h3>
+        </div>
+ 
+        <div class="jumbotron">
+            <h1> If you care -  <br />
+            Donate and Impact </h1>
+            <p> Click on social issues below to find relevant charities </p>
+            <p class="lead"></p>
+ 
+        </div>
+ 
+        <div class="row marketing">
+            <div class="col-lg-6">
+            
+                <a href="{{url_for('education')}}">
+                <h4>Education</h4>
+                <p><img src="{{url_for('static', filename='education.jpg')}}"></p>
+                </a>
+                
+                <a href="{{url_for('poverty')}}">
+                <h4> Poverty </h4>
+                <p><img src="{{url_for('static', filename='poverty.jpg')}}"></p>
+                </a>
+                
+                <a href="{{url_for('healthcare')}}">
+                <h4> Health Care </h4>
+                <p><img src="{{url_for('static', filename='health.jpg')}}"></p>
+                </a>
+            </div>
+            
+            <div class="col-lg-6">
+                <a href="{{url_for('minorities')}}">
+                <h4> Racial Justice </h4>
+                <p><img src="{{url_for('static', filename='minority.jpg')}}"></p>
+                </a>
+                
+                <a href="{{url_for('foodsecurity')}}">
+                <h4> Food Security </h4>
+                <p><img src="{{url_for('static', filename='food.jpg')}}"></p>
+                </a>
+                
+                <a href="{{url_for('parenthood')}}">
+                <h4> Parenthood </h4>
+                <p><img src="{{url_for('static', filename='parenthood.jpg')}}"></p>
+                </a>
+            </div>
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; State of the States 2017</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>

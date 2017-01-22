@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+ 
+<head>
+    <title> State of the States </title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('match')}}">Match Me!</a>
+                    </li>
+                    <li role="presentation" class="active"> <a href="{{url_for('charities')}}">Charities</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">State of the States</h3>
+            
+        </div>
+ 
+        <div class="jumbotron">
+            <h1> Parenthood </h1>
+            <p> Prepare our parents to educate their children </p>
+            <p class="lead"></p>
+ 
+        </div>
+ 
+        <div class="row marketing">
+            <div class="col-lg-6">
+            
+                <a href="https://www.plannedparenthood.org/about-us/who-we-are">
+                <h4>Planned Parenthood </h4>
+                </a>
+                
+                <a href="http://wgnrr.org/">
+                <h4> Women’s Global Network For Reproductive Rights </h4>
+                </a>
+                
+                <a href="http://preventchildabuse.org/">
+                <h4> Prevent Child Abuse America </h4>
+                </a>
+            </div>
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; State of the States 2017</p>
+        </footer>
+    </div>
+</body>
+ 
+</html>

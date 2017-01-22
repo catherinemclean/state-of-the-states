@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>State of the States</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+ 
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('match')}}">Match Me!</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('charities')}}">Charities</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">State of the States</h3>
+        </div>
+ 
+        <div class="jumbotron">
+            <h1>About</h1>
+            <p>Surprised about election results? So were we.</p>
+            
+            <p>
+            This election has brought to light the vast disparities of living conditions in different parts of America. With uneven development occuring across the country, we have lost touch with what other parts of America are like. State of the States aims to show you what your life would be like if you grew up elsewhere. How would your income change? Access to women's healthcare? What about pregnancy rates? 
+            </p>
+            <p class="lead"></p>
+            <p><a class="btn btn-lg btn-success" href="{{url_for('match')}}" role="button">Match me! </a>
+            </p>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; State of the States 2017</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>
