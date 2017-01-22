@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+ 
+<head>
+    <title>Growing Up Elsewhere</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+ 
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="{{url_for('match')}}">Match Me!</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('charities')}}">Charities</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Growing Up Elsewhere</h3>
+        </div>
+        <hr>
+        <div class="jumbotron" style="text-align: center;">
+            <h1>Match me!</h1>
+            <p>Fill out the information below, and we'll match you with a state!</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="{{url_for('static', filename='MoneyIcon.png')}}">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{url_for('static', filename='FoodIcon.png')}}">
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    {{ wtf.quick_form(form) }}
+                </div>
+                <div class="col-md-2">
+                    <img src="{{url_for('static', filename='HealthIcon.png')}}">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{url_for('static', filename='WomensHealthIcon.png')}}">
+                </div>
+            </div>
+        
+        
+        <div class="container">
+            <div class="row">
+                {% for id in ids %}
+                    <h2>Wage Gap Chart for {{choice}} and {{state}}</h2>
+                    <div class="col-md-7">
+                        <div id="{{id}}"></div>
+                </div>
+                    <div class="col-md-3" style="padding:100px 100px 0px 0px; font-size:20px;">
+                        On average, women make 79 cents to a man's dollar. Here are some statistics specific to the differences between {{choice}} and {{state}}. <a href="http://nwlc.org/resources/wage-gap-state-state/">Source.</a>
+                    </div>
+                {% endfor %}
+            </div>
+         <div>
+           
+        </div>
+    </div>
+        
+                <div class="container">
+        <div class="row">
+            {% for id in idWR %}
+            <h2>Wage Gap by Race for {{choice}} and {{state}}</h2>
+            <div class="col-md-7">  
+                <div id="{{id}}"></div>
+            </div>
+            <div class="col-md-3" style="padding:80px 80px 0px 0px; font-size:20px;">
+                        There is also a wage gap disparity based on race. Here are some statistics specific to the differences between {{choice}} and {{state}}. <a href="http://www.remappingdebate.org/map-data-tool/racial-disparities-median-household-income-remain-enormous-most-states/page/0/2">Source.</a>
+                    </div>
+            {% endfor %}
+        </div>
+         <div>
+           
+        </div>
+    </div>
+        
+  <div class="container">
+        <div class="row">
+            {% for id in id2 %}
+                <h2>Health Differences in {{choice}} and {{state}}</h2>
+            <div class="col-md-7">    
+                <div id="{{id}}"></div>
+            </div>
+            <div class="col-md-3" style="padding:80px 80px 0px 0px; font-size:20px;">
+                        Different states make different policies regarding healthcare. Here are some statistics specific to the differences between {{choice}} and {{state}}. <a href="http://www.census.gov/quickfacts/table/PST045216/00">Source.</a>
+                    </div>
+            {% endfor %}
+        </div>
+         <div>
+           
+        </div>
+    </div>
+        
+        <div class="container">
+        <div class="row">
+            {% for id in idBus %}
+                <h2>Business Ownership by Race/Gender for {{choice}} and {{state}}</h2>
+            <div class="col-md-7">    
+                <div id="{{id}}"></div>
+            </div>
+            <div class="col-md-3" style="padding:80px 80px 0px 0px; font-size:20px;">
+                        Business ownership differs by race and gender across states. Here are some statistics specific to the differences between {{choice}} and {{state}}. <a href="http://www.census.gov/quickfacts/table/PST045216/00">Source.</a>
+                    </div>
+            {% endfor %}
+        </div>
+         <div>
+           
+        </div>
+    </div>
+</div>
+ <footer class="footer">
+        <!-- D3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+
+    <script type="text/javascript">
+
+        var graphs = {{graphJSON | safe}}
+        var graph2 = {{graphJSON2 | safe}};
+        var graphWageRace = {{graphWageRace | safe}}
+        var graphBusiness = {{graphBusiness | safe}}
+        var ids = {{ids | safe}};
+        var id2 = {{id2 | safe}};
+        var idWR = {{idWR | safe}};
+        var idBus = {{idBus | safe}}
+        for(var i in graphs) {
+            Plotly.plot(ids[i], // the ID of the div, created above
+                        graphs[i].data,
+                        graphs[i].layout || {});
+        }
+        for(var x in graph2) {
+            Plotly.plot(id2[x], // the ID of the div, created above
+                        graph2[x].data,
+                        graph2[x].layout || {});
+        }
+        for(var j in graphWageRace) {
+            Plotly.plot(idWR[j], // the ID of the div, created above
+                        graphWageRace[j].data,
+                        graphWageRace[j].layout || {});
+        }
+        for(var r in graphBusiness) {
+            Plotly.plot(idBus[r], // the ID of the div, created above
+                        graphBusiness[r].data,
+                        graphBusiness[r].layout || {});
+        }
+
+    </script>
+        <div style="padding:0px 0px 0px 0px; float: left;">
+         <p>&copy; Company 2015</p>
+     </div>
+        </footer>
+    </div>
+    {% endblock %}
+</body>
+ 
+</html>

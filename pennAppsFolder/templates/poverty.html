@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+ 
+<head>
+    <title> Growing Up Elsewhere </title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('match')}}">Match Me!</a>
+                    </li>
+                    <li role="presentation" class="active"> <a href="{{url_for('charities')}}">Charities</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Growing Up Elsewhere</h3>
+            
+        </div>
+ 
+        <div class="jumbotron">
+            <h1> Poverty </h1>
+            <p> Bring our brothers & sisters out of deprivation </p>
+            <p class="lead"></p>
+ 
+        </div>
+ 
+        <div class="row marketing">
+            <div class="col-lg-6">
+            
+                <a href="http://www.feedingamerica.org/">
+                <h4> Feeding America</h4>
+                </a>
+                
+                <a href="http://www.povertyusa.org/">
+                <h4> Poverty USA </h4>
+                </a>
+                
+                <a href="https://www.sfmfoodbank.org/">
+                <h4> San Francisco Marin Food Bank </h4>
+                </a>
+            </div>
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
+</body>
+ 
+</html>
